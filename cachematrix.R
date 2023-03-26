@@ -42,15 +42,4 @@ cacheSolve <- function(x, ...) {
 }
 
 
-test <- function() 
-{
-  my_matrix <- makeCacheMatrix(matrix(1:4, 2, 2))
-  my_matrix$get()
-  my_matrix$getInverse()
-  cacheSolve(my_matrix)
-  my_matrix$set(matrix(c(0,5,99,66), nrow=2, ncol=2)) # Modify existing matrix
-  cacheSolve(my_matrix)   # Computes, caches, and returns new matrix inverse
-  my_matrix$get()         # Returns matrix
-  my_matrix$getInverse()  # Returns matrix inverse    
-  my_matrix$get() %*% my_matrix$getInverse() # returns the identity matrix
-}
+
